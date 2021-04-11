@@ -20,7 +20,10 @@ void main() {
   //useOperators();
   
   // 4. if-else, swith-case, ??
-  useJudgment();
+  //useJudgment();
+
+  // 5. List class
+  useList();
 }
 
 void useConst() {
@@ -77,4 +80,28 @@ void useJudgment() {
     default:
       print('unknown');
   }
+}
+
+void useList() {
+  var list = ['a', 'b', 'c'];
+  print(list.length);
+  print(list.isEmpty);
+  print(list.isNotEmpty);
+
+  list.add('d');
+  list.addAll(['e', 'f']);
+  print(list.indexOf('a'));
+  print(list.remove('a'));
+  print(list.removeAt(1));
+  list.fillRange(0, 2, '0');
+  list.insert(0, 'a');
+  list.insertAll(0, ['b', 'c']);
+  print(list.toList());
+  print(list.join(','));
+  list.forEach((str) {
+    print(str);
+  });
+  print(list.map((e) => e + ''));
+  print(list.where((e) => true));
+  print(list.any((e) => false));
 }
